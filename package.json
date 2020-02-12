@@ -1,6 +1,6 @@
 {
   "name": "extra-english",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "English is a West Germanic language, first spoken in early medieval England.",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,13 @@
   "bugs": {
     "url": "https://github.com/nodef/extra-english/issues"
   },
-  "homepage": "https://github.com/nodef/extra-english#readme"
+  "homepage": "https://github.com/nodef/extra-english#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "find-npm-prefix": "^1.0.2",
+    "recast": "^0.18.5",
+    "string-objectreplaceprefix": "^0.1.5",
+    "string-objectreplacesuffix": "^0.1.8",
+    "string-symbolat": "^0.1.4"
+  }
 }
