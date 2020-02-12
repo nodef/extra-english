@@ -32,13 +32,13 @@ english.nysiisPhonetic('Mackie');
 <br>
 <br>
 
-[![nodef](https://merferry.glitch.me/card/extra-integer.svg)](https://nodef.github.io)
+[![nodef](https://merferry.glitch.me/card/extra-english.svg)](https://nodef.github.io)
 
-[caverphonePhonetic]: https://github.com/nodef/extra-integer/wiki/caverphonePhonetic
-[colognePhonetic]: https://github.com/nodef/extra-integer/wiki/colognePhonetic
-[metaphonePhonetic]: https://github.com/nodef/extra-integer/wiki/metaphonePhonetic
-[mraPhonetic]: https://github.com/nodef/extra-integer/wiki/mraPhonetic
-[nysiisPhonetic]: https://github.com/nodef/extra-integer/wiki/nysiisPhonetic
-[soundexPhonetic]: https://github.com/nodef/extra-integer/wiki/soundexPhonetic
-[soundexSqlPhonetic]: https://github.com/nodef/extra-integer/wiki/soundexSqlPhonetic
+[caverphonePhonetic]: https://github.com/nodef/extra-english/wiki/caverphonePhonetic
+[colognePhonetic]: https://github.com/nodef/extra-english/wiki/colognePhonetic
+[metaphonePhonetic]: https://github.com/nodef/extra-english/wiki/metaphonePhonetic
+[mraPhonetic]: https://github.com/nodef/extra-english/wiki/mraPhonetic
+[nysiisPhonetic]: https://github.com/nodef/extra-english/wiki/nysiisPhonetic
+[soundexPhonetic]: https://github.com/nodef/extra-english/wiki/soundexPhonetic
+[soundexSqlPhonetic]: https://github.com/nodef/extra-english/wiki/soundexSqlPhonetic
 [English]: https://en.wikipedia.org/wiki/English_language

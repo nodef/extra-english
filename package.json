@@ -1,6 +1,6 @@
 {
   "name": "extra-english",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "English is a West Germanic language, first spoken in early medieval England.",
   "main": "index.js",
   "scripts": {
