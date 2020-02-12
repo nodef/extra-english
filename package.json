@@ -1,0 +1,31 @@
+{
+  "name": "extra-english",
+  "version": "0.0.1",
+  "description": "English is a West Germanic language, first spoken in early medieval England.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/extra-english.git"
+  },
+  "keywords": [
+    "extra",
+    "english",
+    "text",
+    "phonetic",
+    "metaphone",
+    "caverphone",
+    "nysiis",
+    "mra",
+    "soundex",
+    "cologne"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodef/extra-english/issues"
+  },
+  "homepage": "https://github.com/nodef/extra-english#readme"
+}
