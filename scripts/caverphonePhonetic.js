@@ -59,7 +59,7 @@ const REPLACES = [
 /**
  * Gets Caverphone phonetic of english text.
  * @param {string} txt english text
- * @param {boolean} ext extended caverphone? (false)
+ * @param {boolean} ext extended Caverphone? (false)
  */
 function caverphonePhonetic(txt, ext=false) {
   var t = txt.replace(/[^A-Za-z]/g, '').toLowerCase();

@@ -4,7 +4,7 @@ const D1 = 'bfpv', D2 = 'cgjkqsxz', D3 = 'dt', D4 = 'l', D5 = 'mn', D6 = 'r';
 /**
  * Gets Soundex phonetic (SQL) of english text.
  * @param {string} txt english text
- * @param {boolean} ext extended Soundex SQL? (false)
+ * @param {boolean} ext extended Soundex? (false)
  */
 function soundexSqlPhonetic(txt, ext=false) {
   // 1. filter text, keep only alphabets
