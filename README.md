@@ -1,8 +1,11 @@
 [English] is a West Germanic language, first spoken in early medieval England. This package is a collection of various English language utilities. It includes functions for converting text to phonetic representations and stemming words.
 
+[English]: https://en.wikipedia.org/wiki/English_language
+
 ▌
 📦 [JSR](https://jsr.io/@nodef/extra-english),
-📰 [Docs](https://jsr.io/@nodef/extra-english/doc),
+📦 [NPM](https://www.npmjs.com/package/@nodef/extra-english),
+📰 [Docs](https://jsr.io/@nodef/extra-english/doc).
 
 <br>
 
@@ -60,6 +63,7 @@ xenglish.porterStem('running');
 [![ORG](https://img.shields.io/badge/org-nodef-green?logo=Org)](https://nodef.github.io)
 ![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/extra-english)
 
+
 [caverphonePhonetic]: https://jsr.io/@nodef/extra-english/doc/~/caverphonePhonetic
 [colognePhonetic]: https://jsr.io/@nodef/extra-english/doc/~/colognePhonetic
 [metaphonePhonetic]: https://jsr.io/@nodef/extra-english/doc/~/metaphonePhonetic
@@ -69,4 +73,3 @@ xenglish.porterStem('running');
 [soundexSqlPhonetic]: https://jsr.io/@nodef/extra-english/doc/~/soundexSqlPhonetic
 [lancasterStem]: https://jsr.io/@nodef/extra-english/doc/~/lancasterStem
 [porterStem]: https://jsr.io/@nodef/extra-english/doc/~/porterStem
-[English]: https://en.wikipedia.org/wiki/English_language
