@@ -5,6 +5,7 @@
 ▌
 📦 [JSR](https://jsr.io/@nodef/extra-english),
 📦 [NPM](https://www.npmjs.com/package/@nodef/extra-english),
+🌐 [Web](https://cdn.jsdelivr.net/npm/@nodef/extra-english.web),
 📰 [Docs](https://jsr.io/@nodef/extra-english/doc).
 
 <br>
