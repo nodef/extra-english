@@ -167,26 +167,28 @@ const RMETAPHONE = [
   {p: /C/g, v: 'K'},
   {p: /D(GE|GY|GI)/g, v: 'J$1'},
   {p: /D/g, v: 'T'},
+  {p: /([AEIOU])H([^AEIOU])|([AEIOU])H$/g, v: '$1$2$3'},
   {p: /G(H[^AEIOU])/g, v: '$1'},
+  {p: /N(I)H([^AEIOU])/g, v: 'N$2'},
   {p: /G(N|NED)$/g, v: '$1'},
   {p: /([^G])G(I|E|Y)/g, v: '$1J$2'},
   {p: /G/g, v: 'K'},
-  {p: /([AEIOU])H([^AEIOU])|([AEIOU])H$/g, v: '$1H$2'},
   {p: /CK/g, v: 'K'},
   {p: /PH/g, v: 'F'},
   {p: /Q/g, v: 'K'},
-  {p: /S(H|IO|IA)/g, v: 'X$1'},
-  {p: /T(IA|IO)/g, v: 'X$1'},
+  {p: /^X/g, v: 'S'},
+  {p: /X/g, v: 'KS'},
+  {p: /S(H|IO|IA)/g, v: 'X'},
+  {p: /T(IA|IO)/g, v: 'X'},
   {p: /TH/g, v: '0'},
   {p: /TCH/g, v: 'CH'},
   {p: /V/g, v: 'F'},
   {p: /^WH/g, v: 'W'},
+  {p: /W([AEIOU])/g, v: 'W'},
   {p: /W([^AEIOU])|W$/g, v: '$1'},
-  {p: /^X/g, v: 'S'},
-  {p: /X/g, v: 'KS'},
   {p: /Y([^AEIOU])|Y$/g, v: '$1'},
   {p: /Z/g, v: 'S'},
-  {p: /(.)[AEIOU]/g, v: '$1'}
+  {p: /(.)[AEIOU]/g, v: '$1'},
 ];
 
 
@@ -618,33 +620,34 @@ export function porterStem(word: string): string {
   else if (w.endsWith("s")) w = w.slice(0, -1);
   // 1b. Remove -ed and -ing where appropriate.
   if (w.endsWith("eed")) {
-    // If the stem (w without "eed") has m > 0, replace "eed" with "ee".
+    // Use the measure of the stem (w without "eed"), not the whole word.
     const base = w.slice(0, -3);
-    if (measureVC(w) > 0) w = base + "ee";
+    if (measureVC(base) > 0) w = base + "ee";
   }
   else if ((w.endsWith("ed")  && containsVowel(w.slice(0, -2))) ||
            (w.endsWith("ing") && containsVowel(w.slice(0, -3)))) {
     // Remove "ed" or "ing" suffix.
-    w = w.endsWith("ed")? w.slice(0, w.length - 2) : w.slice(0, w.length - 3);
+    w = w.endsWith("ed") ? w.slice(0, w.length - 2) : w.slice(0, w.length - 3);
     // Special handling for endings after removal.
     if (w.endsWith("at") || w.endsWith("bl") || w.endsWith("iz")) w += "e";
     else if (endsWithDoubleConsonant(w) && !"lsz".includes(w[w.length - 1])) w = w.slice(0, -1);
-    else if (measureVC(w) === 1 && endsWithCVC(w, w.length-1)) w += "e";
+    else if (measureVC(w) === 1 && endsWithCVC(w, w.length - 1)) w += "e";
   }
   // 1c. Replace terminal 'y' with 'i' if there is a vowel in the stem.
-  if (w.endsWith("y") && containsVowel(w)) w = w.slice(0, -1) + "i";
+  if (w.endsWith("y") && containsVowel(w.slice(0, -1))) w = w.slice(0, -1) + "i";
+
   // 2. Replace double-suffixes with single ones.
   for (const [suffix, replacement] of PSREPLACE2) {
     if (!w.endsWith(suffix)) continue;
     const base = w.slice(0, w.length - suffix.length);
-    if (measureVC(w) > 0) w = base + replacement;
+    if (measureVC(base) > 0) w = base + replacement;
     break;
   }
   // 3. Further suffix stripping.
   for (const [suffix, replacement] of PSREPLACE3) {
     if (!w.endsWith(suffix)) continue;
     const base = w.slice(0, w.length - suffix.length);
-    if (measureVC(w) > 0) w = base + replacement;
+    if (measureVC(base) > 0) w = base + replacement;
     break;
   }
   // 4. Remove certain suffixes if measure > 1.
@@ -652,17 +655,17 @@ export function porterStem(word: string): string {
     if (!w.endsWith(suffix)) continue;
     const base = w.slice(0, w.length - suffix.length);
     // Special check for "ion": the stem must end with s or t.
-    if (measureVC(w) > 1 && (suffix!=="ion" || (base.endsWith("s") || base.endsWith("t")))) w = base;
+    if (measureVC(base) > 1 && (suffix !== "ion" || base.endsWith("s") || base.endsWith("t"))) w = base;
     break;
   }
   // 5. Clean up the ending.
-  // Remove a trailing "e" if measure>1, or measure===1 but not cvc.
+  // Remove a trailing "e" if measure > 1, or measure === 1 but not cvc.
   if (w.endsWith("e")) {
     const m = measureVC(w);
-    if (m> 1 || (m=== 1 && !endsWithCVC(w, w.length - 2))) w = w.slice(0, -1);
+    if (m > 1 || (m === 1 && !endsWithCVC(w, w.length - 2))) w = w.slice(0, -1);
   }
-  // If the word ends with "ll" and measure>1, reduce it to single "l".
-  if (w.endsWith("ll") && measureVC(w)>1) w = w.slice(0, -1);
+  // If the word ends with "ll" and measure > 1, reduce it to single "l".
+  if (w.endsWith("ll") && measureVC(w) > 1) w = w.slice(0, -1);
   return w;
 }
 //#endregion

@@ -26,6 +26,11 @@ Deno.test("Cologne Phonetic", () => {
 
 Deno.test("Metaphone Phonetic", () => {
   assertEquals(metaphonePhonetic("Lightyear"), "LHTYAR");
+  assertEquals(metaphonePhonetic("waits"), "WTS");
+  assertEquals(metaphonePhonetic("position"), "PSXN");
+  assertEquals(metaphonePhonetic("knight"), "NT");
+  assertEquals(metaphonePhonetic("ship"), "XP");
+  assertEquals(metaphonePhonetic("ah"), "A");
 });
 
 
@@ -59,5 +64,10 @@ Deno.test("Lancaster Stem", () => {
 
 Deno.test("Porter Stem", () => {
   assertEquals(porterStem("running"), "run");
+  assertEquals(porterStem("feed"), "feed");
+  assertEquals(porterStem("sky"), "sky");
+  assertEquals(porterStem("relational"), "relat");
+  assertEquals(porterStem("movement"), "movement");
+  assertEquals(porterStem("cement"), "cement");
 });
 //#endregion
